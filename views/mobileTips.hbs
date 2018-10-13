@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>公用房预约</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../stylesheets/index.css"  media="all">
+    <script>
+        document.title = '公用房预约 | 使用说明'
+    </script>
+</head>
+
+<body class="layui-layout-body" style="background: #EBEDF4">
+<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+<!--[if lt IE 9]>
+<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<div class="layui-layout layui-layout-admin">
+    <!-- 头部导航栏 -->
+    <div class="layui-header">
+        <div class="layui-logo" style="font-size: 20px;padding-left: 10px;width: auto;color: gainsboro;padding-right: 5px">公用房预约</div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left" style="padding-left: 0px;left: 120px">
+            <li class="layui-nav-item" style="padding-right: 3px;padding-left: 3px"><a style="padding-right: 1px;padding-left: 1px" href="/">使用情况</a></li>
+            <li class="layui-nav-item" style="padding-right: 3px;padding-left: 3px"><a style="padding-right: 1px;padding-left: 1px" href="/form">开始预约</a></li>
+            <li class="layui-nav-item" style="padding-right: 3px;padding-left: 3px"><a style="padding-right: 1px;padding-left: 1px" href="/tips">使用说明</a></li>
+        </ul>
+    </div>
+
+
+    <!-- 主体内容 -->
+    <div class="layui-body" style="left: 0">
+        <div class="layui-row">
+            <div class="layui-col-md8 layui-col-md-offset2">
+                <div class="layui-card" style="margin-top: 5px">
+                    <div class="layui-card-header">使用说明</div>
+                    <div class="layui-card-body">
+                        <p>【公用房使用规范】</p>
+                        <p style="text-indent: 30px">会议室租用者有责任保持会议室卫生与物品摆放整洁；</p>
+                        <p style="text-indent: 30px">任何人禁止在未经允许情况下使用公用房物品；</p>
+                        <p style="text-indent: 30px">会议室使用结束后，关闭门窗、切断使用电源并将凳子摆放归位；</p>
+                        <br><p>【常规事项】</p>
+                        <p style="text-indent: 30px">除分团委学生会部门、院系各队伍之外的申请人请联系办公室负责人：玉米提（QQ 859721390）说明具体申请原因并获取开门方式；</p>
+                        <p style="text-indent: 30px">会议室申请应在使用前12小时完成；</p>
+                        <p style="text-indent: 30px">会议室可能存在临时占用情况；</p>
+                        <p style="text-indent: 30px;color: red">若在使用过程中有违反公用房使用规范的情况，下次申请将不予审批；</p>
+                        <br><p>【公用房使用指南】</p>
+                        <p style="text-indent: 30px">新的公用房预约系统会需要您的常用电子邮箱（qq邮箱即可）</p>
+                        <p style="text-indent: 30px">在您的申请被批准、拒绝、临时紧急占用时，系统会自动发送邮件告知，但不要直接回复该邮件，有问题时应及时联系负责人</p>
+                        <p style="text-indent: 30px">每个电子邮箱同时只能存在一个申请，每次的申请时长必须在半小时到三小时之间</p>
+                        <p style="text-indent: 30px">如果您申请之后想要对已存在的申请进行修改，只需要在预约界面填写电子邮箱，选中【修改已预约信息】。系统会自动补齐您的申请，更改您想要的时间之后再次提交即可（只允许更改日期和时间）</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部信息栏 -->
+    <div class="layui-footer" style="left:0;text-align: center;">
+        © 电信学院 - 科协技术部&办公室
+    </div>
+</div>
+
+<!-- js脚本部分 -->
+<script src="../layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    /**
+     * element:导航栏
+     */
+    layui.use('element', function(){
+        var element = layui.element;
+
+    });
+</script>
+
+</body>
