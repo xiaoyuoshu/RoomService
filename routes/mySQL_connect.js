@@ -32,8 +32,10 @@ var GetWeek = function(a){
     }
 };
 var Date2String = function(B,E) {
-    var begin_date = new Date(B);
-    var end_date = new Date(E);
+    var begin_date = new Date();
+    var end_date = new Date();
+    begin_date.setTime(B);
+    end_date.setTime(E);
     var date = (begin_date.getMonth()+1)
         + "月"
         +(begin_date.getDate()<10?('0'+begin_date.getDate()):(begin_date.getDate()))
@@ -66,6 +68,7 @@ class Database{
      */
     queryApp(req, res){
         var that = this;
+        console.log(Date2String(Date.now(),Date.now()));
         var resultData = {};
         var sql = 'select * from apps where begin_time <= '+Date.now()+' and end_time >= '+Date.now()+' and state = 1 and init_time > '+(Date.now()-1209600000);
         this.connection.query(sql, function (err, result) {
@@ -230,6 +233,7 @@ class Database{
                         console.log(err);
                     }
                     else{
+                        var R = result;
                         if(result[0].wx_id != ('\''+email+'\'') || result[0].applicant != applicant || result[0].department != department || result[0].reason != reason) {
                             res.send('-2');
                             return -2;
@@ -244,7 +248,7 @@ class Database{
                                         from: '395506376@qq.com',
                                         to: '1738010002@qq.com,2506017166@qq.com,1468111755@qq.com,859721390@qq.com',
                                         subject: '【预约信息变更通知】',
-                                        html: '预约更改！<br>申请人：'+applicant+'('+department+')<br>'+'理由：'+reason+'<br>旧时间：'+Date2String(result[0].begin_time,result[0].end_time)+'<br>新时间：'+Date2String(begin_time,end_time)
+                                        html: '预约更改！<br>申请人：'+applicant+'('+department+')<br>'+'理由：'+reason+'<br>旧时间：'+Date2String(R[0].begin_time,R[0].end_time)+'<br>新时间：'+Date2String(begin_time,end_time)
 
                                     }, function (error, response) {
                                         if (error) {
